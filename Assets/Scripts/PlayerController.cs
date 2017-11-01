@@ -11,7 +11,10 @@ public class PlayerController : MonoBehaviour {
 	// Used to calibrate the Input.acceleration
 	void CalibrateAccelerometer()
 	{
-		/*Currently only works in quadrants 2&4
+		/*Currently only works if calibrate is clicked in quadrant 2
+		 * if clicked in 2, zeros in 2
+		 * if clicked in 3, zeros in 1
+		 * if clicked in 1, zeros flipped in 1 (up is down, down is up)
 		 * 
 		 *                  UP
 		 *                  ^

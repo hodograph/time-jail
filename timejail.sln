@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "timejail", "Assembly-CSharp.csproj", "{BE5C2DF4-95FB-40DB-8C61-614577EC5E99}"
 EndProject
+Project("{0D3A429C-0CF9-3A3C-1646-4DBC29811820}") = "timejail", "Assembly-UnityScript.unityproj", "{0C074246-BF1C-4BDB-18C5-AC0FB0B5F930}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{BE5C2DF4-95FB-40DB-8C61-614577EC5E99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE5C2DF4-95FB-40DB-8C61-614577EC5E99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE5C2DF4-95FB-40DB-8C61-614577EC5E99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C074246-BF1C-4BDB-18C5-AC0FB0B5F930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C074246-BF1C-4BDB-18C5-AC0FB0B5F930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C074246-BF1C-4BDB-18C5-AC0FB0B5F930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C074246-BF1C-4BDB-18C5-AC0FB0B5F930}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

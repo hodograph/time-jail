@@ -25,12 +25,12 @@ function CanSeePlayer() : boolean
  
              if (hit.transform.tag == "Player") 
              {
-                 //Debug.Log("Can see player");
+                 Debug.Log("Can see player");
                  return true;
              }
              else
              {
-                 //Debug.Log("Can not see player");
+                 Debug.Log("Can not see player");
                  return false;
              }
          }

@@ -2,6 +2,7 @@
 var fieldOfViewRange : float; // in degrees (I use 68, this gives the enemy a vision of 136 degrees)
 var minPlayerDetectDistance : float; // the distance the player can come behind the enemy without being deteacted
 var rayRange : float; // distance the enemy can "see" in front of him
+var rayAngle : float; //zero angle for guard to look in.
 private var rayDirection = Vector3.zero;
 
 function CanSeePlayer() : boolean
@@ -17,23 +18,28 @@ function CanSeePlayer() : boolean
          	return true;
          }
 	}
-
-	 if((Vector3.Angle(rayDirection, transform.forward)) < fieldOfViewRange)
+	Debug.DrawRay(transform.position, rayDirection);
+	//Debug.Log(Vector3.Angle(rayDirection, transform.forward));
+	 if((Vector3.Angle(rayDirection, transform.forward)-rayAngle) < fieldOfViewRange)
 	 { // Detect if player is within the field of view
          if (Physics.Raycast (transform.position, rayDirection, hit))
           {
  
              if (hit.transform.tag == "Player") 
              {
-                 Debug.Log("Can see player");
+                 Debug.Log(this.name + ": Can see player");
                  return true;
              }
              else
              {
-                 Debug.Log("Can not see player");
+                 //Debug.Log(this.name + ": Can not see player");
                  return false;
              }
          }
      }
+ }
+
+ function Update(){
+ 	CanSeePlayer();
  }
 

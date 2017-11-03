@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
 	public float speedMultiplier;
 	public Rigidbody rb;
 	Matrix4x4 baseMatrix = Matrix4x4.identity;
+	public static bool timeFrozen = false;
 
 	// Used to calibrate the Input.acceleration
 	void CalibrateAccelerometer()
@@ -32,8 +33,8 @@ public class PlayerController : MonoBehaviour {
 		  Not sure how or why this works.
 		*/
 		Vector3 Accel = Input.acceleration;
-		Accel.z *= -1;
-		Quaternion rotate = Quaternion.FromToRotation(new Vector3(0.0f, 0.0f, -1.0f), Accel);
+		//Accel.z *= -1;
+		Quaternion rotate = Quaternion.FromToRotation(new Vector3(0.0f, 0.0f, 1.0f), Accel);
 		Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, rotate, new Vector3(1.0f, 1.0f, 1.0f));
 		this.baseMatrix = matrix.inverse;
 	}
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		Vector3 Move = Vector3.zero;
 		Vector3 fixedAcceleration = this.baseMatrix.MultiplyVector (Input.acceleration);
 		//Debug.Log ("Fixed: " + fixedAcceleration);
 		//Debug.Log ("Original: " + Input.acceleration);
@@ -57,21 +59,29 @@ public class PlayerController : MonoBehaviour {
 		float moveHoriz = Input.GetAxis ("Horizontal");
 		if (moveVert != 0.0f || moveHoriz != 0.0f) {
 
-			Vector3 Move = new Vector3 (moveHoriz, 0.0f, moveVert);
+			Move = new Vector3 (moveHoriz, 0.0f, moveVert);
 
 			rb.velocity = Move * speedMultiplier;
 		}
+		if (fixedAcceleration == Vector3.zero && Move == Vector3.zero)
+			timeFrozen = true;
+		else
+			timeFrozen = false;
 	}
 
 	void OnGUI(){
+		GUIStyle calibrateStyle = new GUIStyle ("button");
+		calibrateStyle.fontSize = 15;
 		//Calibrate button
-		if (GUI.Button(new Rect(Screen.width/10*9, Screen.height/20*18, Screen.width/10, Screen.width/20), "Calibrate")) {
+		if (GUI.Button(new Rect(Screen.width/10*9, Screen.height/20*18, Screen.width/10, Screen.width/20), "Calibrate", calibrateStyle)) {
 			CalibrateAccelerometer ();
 			Debug.Log ("Calibrating");
 		}
 
+		GUIStyle sprintStyle = new GUIStyle ("button");
+		sprintStyle.fontSize = 15;
 		//Sprint button (repeat does on hold)
-		if(GUI.RepeatButton(new Rect(Screen.width/10*9, Screen.height/20*16, Screen.width/10, Screen.width/20), "Sprint")){
+		if(GUI.RepeatButton(new Rect(Screen.width/10*9, Screen.height/20*16, Screen.width/10, Screen.width/20), "Sprint", sprintStyle)){
 			speedMultiplier = 80f;
 		}else{
 			speedMultiplier = 20f;

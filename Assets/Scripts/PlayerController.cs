@@ -5,9 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
 	public float speedMultiplier;
-	public Rigidbody rb;
 	Matrix4x4 baseMatrix = Matrix4x4.identity;
 	public static bool timeFrozen = false;
+	[HideInInspector]
+	public Rigidbody rb;
+
+
 
 	// Used to calibrate the Input.acceleration
 	void CalibrateAccelerometer()
@@ -33,8 +36,8 @@ public class PlayerController : MonoBehaviour {
 		  Not sure how or why this works.
 		*/
 		Vector3 Accel = Input.acceleration;
-		//Accel.z *= -1;
-		Quaternion rotate = Quaternion.FromToRotation(new Vector3(0.0f, 0.0f, 1.0f), Accel);
+		Accel.z *= -1;
+		Quaternion rotate = Quaternion.FromToRotation(new Vector3(0.0f, 0.0f, -1.0f), Accel);
 		Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, rotate, new Vector3(1.0f, 1.0f, 1.0f));
 		this.baseMatrix = matrix.inverse;
 	}
@@ -43,6 +46,7 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 
 		speedMultiplier = 20f;
+
 		rb = GetComponent<Rigidbody>();
 		CalibrateAccelerometer ();
 	}
@@ -62,6 +66,7 @@ public class PlayerController : MonoBehaviour {
 			Move = new Vector3 (moveHoriz, 0.0f, moveVert);
 
 			rb.velocity = Move * speedMultiplier;
+			//rb.AddForce (Move * speedMultiplier,ForceMode.VelocityChange);
 		}
 		if (fixedAcceleration == Vector3.zero && Move == Vector3.zero)
 			timeFrozen = true;
@@ -69,6 +74,13 @@ public class PlayerController : MonoBehaviour {
 			timeFrozen = false;
 	}
 
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.tag == "PickUp")
+		{
+			other.gameObject.SetActive(false);
+		}
+	}
 	void OnGUI(){
 		GUIStyle calibrateStyle = new GUIStyle ("button");
 		calibrateStyle.fontSize = 15;

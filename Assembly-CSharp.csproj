@@ -51,10 +51,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\EmptyClass.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\FieldOfView.cs" />
+     <Compile Include="Assets\Scripts\FieldOfView2.cs" />
      <Compile Include="Assets\Scripts\Main_Menu.cs" />
+     <Compile Include="Assets\Scripts\MoveTo.cs" />
+     <Compile Include="Assets\Scripts\NavMeshLink.cs" />
+     <Compile Include="Assets\Scripts\NavMeshModifier.cs" />
+     <Compile Include="Assets\Scripts\NavMeshModifierVolume.cs" />
+     <Compile Include="Assets\Scripts\NavMeshSurface.cs" />
+     <Compile Include="Assets\Scripts\PathHolder.cs" />
+     <Compile Include="Assets\Scripts\Patrol.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Rotator.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

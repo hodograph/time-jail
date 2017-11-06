@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class FieldOfView : MonoBehaviour {
@@ -87,7 +88,7 @@ public class FieldOfView : MonoBehaviour {
 				if (!Physics.Raycast(transform.position, dirToTarget, distToTarget, obstacleMask))
 				{
 					visibleTargets.Add(target);
-					Application.LoadLevel(Application.loadedLevel);				
+					SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
 				}
 			}
 		}

@@ -1,160 +1,1 @@
-**Time-Jail** </br></br></br></br>
-
-**Unity Collab History Log Below** </br></br>
-BB</br>05 November 2017 at 11:56pm Eastern Standard Time (9 hours ago)</br>B B</br>"hi its crazy last minute but guard patrols now work"</br>AM</br>05 November 2017 at 10:47pm Eastern Standard Time (10 hours ago)</br>Austin J. Medina</br>"Fix scene loading"</br>JD</br>05 November 2017 at 10:41pm Eastern Standard Time (10 hours ago)</br>Jeremy Dean</br>"reverted to older version so gyroscope works for presentation"</br>AM</br>05 November 2017 at 10:39pm Eastern Standard Time (10 hours ago)</br>Austin J. Medina</br>"Change scene loading method"</br>JD</br>05 November 2017 at 10:31pm Eastern Standard Time (10 hours ago)</br>Jeremy Dean</br>"updated for presentation (second guard rotation)"</br>AM</br>05 November 2017 at 10:28pm Eastern Standard Time (10 hours ago)</br>Austin J. Medina</br>"Build for 1st presentation"</br>JD</br>05 November 2017 at 10:08pm Eastern Standard Time (11 hours ago)</br>Jeremy Dean</br>"built lighting for level two"</br>JD</br>05 November 2017 at 4:16pm Eastern Standard Time (17 hours ago)</br>Jeremy Dean</br>"Fixed capsule guard not working in level one "</br>ss</br>05 November 2017 at 12:53pm Eastern Standard Time (20 hours ago)</br>sebastian soffici</br>"More pickup"</br>ss</br>05 November 2017 at 12:44pm Eastern Standard Time (20 hours ago)</br>sebastian soffici</br>"Implement dymanic pickups"</br>BB</br>05 November 2017 at 7:14am Eastern Standard Time (a day ago)</br>B B</br>"There was a weird thing where if you moved at a wall at a non 90 degree angle, you would just stop as opposed to retianing the momentum that would sitll move you horizontally. i fixed this by giving the player a physics material with 0 friction. in level 2, i started messing around with the guard a bit, made a new field of view script so i could mess with rigid body stuff, and i made the most rudimentary version of pathing possible. with a little more messing around, i should be able to have it do a patrol around a series of walls and loop. i learned how navmesh stuff works, and we can totally use it to generate paths for guards to walk on dynamically duing runtime, or after generating a level procederally, it just looks at the mesh currently in place when you tell it to bake. they dont have that stuff in the standard libraries tho, you have to download it form the official unity git, which is what all those new scripts are."</br>
-JD</br>
-03 November 2017 at 9:33am Eastern Daylight Time (2 minutes ago)</br>
-Jeremy Dean</br>
-"Disable auto generation of lighting which caused scenes to get darker when they were loaded or reloaded. ***If any new scenes or light sources are added go into window>lighting>settings and click generate at the bottom.***"</br>
-JD</br>
-03 November 2017 at 9:23am Eastern Daylight Time (12 minutes ago)</br>
-Jeremy Dean</br>
-"Forgot to comment on last push. It added time freezing for guards"</br>
-JD</br>
-02 November 2017 at 10:20pm Eastern Daylight Time (11 hours ago)</br>
-Jeremy Dean</br>
-"No Comments"</br>
-JD</br>
-02 November 2017 at 7:59pm Eastern Daylight Time (14 hours ago)</br>
-Jeremy Dean</br>
-"Added guard rotation options"</br>
-AM</br>
-02 November 2017 at 4:07pm Eastern Daylight Time (17 hours ago)</br>
-Austin J. Medina</br>
-"Create capsule guard with vision detection (resets level upon detection)"</br>
-AM</br>
-02 November 2017 at 3:07pm Eastern Daylight Time (18 hours ago)</br>
-Austin J. Medina</br>
-"FOV script changes"</br>
-JD</br>
-02 November 2017 at 2:35pm Eastern Daylight Time (19 hours ago)</br>
-Jeremy Dean</br>
-"No Comments"</br>
-ID</br>
-02 November 2017 at 2:26pm Eastern Daylight Time (19 hours ago)</br>
-Iman Dhillon</br>
-"No Comments"</br>
-JD</br>
-02 November 2017 at 1:29pm Eastern Daylight Time (20 hours ago)</br>
-Jeremy Dean</br>
-"Changed main menu"</br>
-JD</br>
-02 November 2017 at 12:53pm Eastern Daylight Time (21 hours ago)</br>
-Jeremy Dean</br>
-"No Comments"</br>
-ss</br>
-02 November 2017 at 12:50pm Eastern Daylight Time (21 hours ago)</br>
-sebastian soffici</br>
-"No Comments"</br>
-ss</br>
-02 November 2017 at 12:49pm Eastern Daylight Time (21 hours ago)</br>
-sebastian soffici</br>
-"added png "</br>
-ss</br>
-02 November 2017 at 12:42pm Eastern Daylight Time (21 hours ago)</br>
-sebastian soffici</br>
-"No Comments"</br>
-JD</br>
-02 November 2017 at 12:32pm Eastern Daylight Time (21 hours ago)</br>
-Jeremy Dean</br>
-"No Comments"</br>
-ss</br>
-02 November 2017 at 12:32pm Eastern Daylight Time (21 hours ago)</br>
-sebastian soffici</br>
-"No Comments"</br>
-AM</br>
-02 November 2017 at 12:30pm Eastern Daylight Time (21 hours ago)</br>
-Austin J. Medina</br>
-"FOV script and Images folder"</br>
-AM</br>
-02 November 2017 at 11:04am Eastern Daylight Time (a day ago)</br>
-Austin J. Medina</br>
-"Change camera angle"</br>
-JD</br>
-02 November 2017 at 10:57am Eastern Daylight Time (a day ago)</br>
-Jeremy Dean</br>
-"No Comments"</br>
-JD</br>
-01 November 2017 at 10:48am Eastern Daylight Time (2 days ago)</br>
-Jeremy Dean</br>
-"Added Title/Label to main menu"</br>
-JD</br>
-01 November 2017 at 10:36am Eastern Daylight Time (2 days ago)</br>
-Jeremy Dean</br>
-"Added main menu, debug controls (WASD)"</br>
-JD</br>
-01 November 2017 at 9:28am Eastern Daylight Time (2 days ago)</br>
-Jeremy Dean</br>
-"Added sprint and calibrate buttons"</br>
-JD</br>
-01 November 2017 at 8:52am Eastern Daylight Time (2 days ago)</br>
-Jeremy Dean</br>
-"No Comments"</br>
-JD</br>
-31 October 2017 at 11:02pm Eastern Daylight Time (2 days ago)</br>
-Jeremy Dean</br>
-"No Comments"</br>
-JD</br>
-31 October 2017 at 8:43pm Eastern Daylight Time (3 days ago)</br>
-Jeremy Dean</br>
-"No Comments"</br>
-JD</br>
-31 October 2017 at 2:10pm Eastern Daylight Time (3 days ago)</br>
-Jeremy Dean</br>
-"Added in accelerometer zeroing. Currently zeroing is "flipped". Trying to fix."</br>
-AM</br>
-31 October 2017 at 1:43pm Eastern Daylight Time (3 days ago)</br>
-Austin J. Medina</br>
-"Attempt AI cone of vision (JavaScript)"</br>
-AM</br>
-31 October 2017 at 1:13pm Eastern Daylight Time (3 days ago)</br>
-Austin J. Medina</br>
-"Modify layout of level one"</br>
-JD</br>
-31 October 2017 at 12:33pm Eastern Daylight Time (3 days ago)</br>
-Jeremy Dean</br>
-"No Comments"</br>
-JD</br>
-31 October 2017 at 12:33pm Eastern Daylight Time (3 days ago)</br>
-Jeremy Dean</br>
-"No Comments"</br>
-JD</br>
-31 October 2017 at 12:32pm Eastern Daylight Time (3 days ago)</br>
-Jeremy Dean</br>
-"No Comments"</br>
-JD</br>
-31 October 2017 at 12:30pm Eastern Daylight Time (3 days ago)</br>
-Jeremy Dean</br>
-"No Comments"</br>
-JD</br>
-31 October 2017 at 12:28pm Eastern Daylight Time (3 days ago)</br>
-Jeremy Dean</br>
-"No Comments"</br>
-JD</br>
-31 October 2017 at 12:25pm Eastern Daylight Time (3 days ago)</br>
-Jeremy Dean</br>
-"No Comments"</br>
-JD</br>
-31 October 2017 at 12:24pm Eastern Daylight Time (3 days ago)</br>
-Jeremy Dean</br>
-"No Comments"</br>
-JD</br>
-31 October 2017 at 11:58am Eastern Daylight Time (3 days ago)</br>
-Jeremy Dean</br>
-"No Comments"</br>
-JD</br>
-31 October 2017 at 11:24am Eastern Daylight Time (3 days ago)</br>
-Jeremy Dean</br>
-"No Comments"</br>
-AM</br>
-31 October 2017 at 11:21am Eastern Daylight Time (3 days ago)</br>
-Austin J. Medina</br>
-"Testing #1"</br>
-JD</br>
-31 October 2017 at 11:16am Eastern Daylight Time (3 days ago)</br>
-Jeremy Dean</br>
-"No Comments"</br>
-AM</br>
-31 October 2017 at 11:10am Eastern Daylight Time (3 days ago)</br>
-Austin J. Medina</br>
-"Initial Commit."
+**Time-Jail** </br></br></br></br></br></br>**Unity Collab History Log Below** </br></br></br></br>20 November 2017 at 9:57am Eastern Standard Time (a day ago)</br>B B</br>"No Comments"</br>BB</br>20 November 2017 at 9:56am Eastern Standard Time (a day ago)</br>B B</br>"Randomlevel1 with randomly spawning guards"</br>JD</br>19 November 2017 at 1:48pm Eastern Standard Time (2 days ago)</br>Jeremy Dean</br>"Fixed pause menu scaling"</br>JD</br>19 November 2017 at 1:45pm Eastern Standard Time (2 days ago)</br>Jeremy Dean</br>"calibration stuff"</br>ss</br>19 November 2017 at 1:33pm Eastern Standard Time (2 days ago)</br>sebastian soffici</br>"Made pause menu into a prefab"</br>JD</br>19 November 2017 at 1:08pm Eastern Standard Time (2 days ago)</br>Jeremy Dean</br>"Turned off shadows"</br>JD</br>19 November 2017 at 12:48pm Eastern Standard Time (2 days ago)</br>Jeremy Dean</br>"changed scale of pause menu"</br>AM</br>19 November 2017 at 12:33pm Eastern Standard Time (2 days ago)</br>Austin J. Medina</br>"Level 3 layout - Iman D. :)"</br>ss</br>19 November 2017 at 12:27pm Eastern Standard Time (2 days ago)</br>sebastian soffici</br>"im dumb"</br>ss</br>19 November 2017 at 12:26pm Eastern Standard Time (2 days ago)</br>sebastian soffici</br>"continuing dynamic sizing pause menu w/jeremy"</br>ss</br>19 November 2017 at 12:22pm Eastern Standard Time (2 days ago)</br>sebastian soffici</br>"Continuing dynnamic sizing pause menu w/jeremy"</br>ss</br>19 November 2017 at 12:18pm Eastern Standard Time (2 days ago)</br>sebastian soffici</br>"Making pause menu dynamically sized w/Jeremy"</br>ss</br>19 November 2017 at 11:41am Eastern Standard Time (2 days ago)</br>sebastian soffici</br>"Mapped pause menu to button"</br>AM</br>19 November 2017 at 11:29am Eastern Standard Time (2 days ago)</br>Austin J. Medina</br>"Fix lighting in random levels"</br>AM</br>19 November 2017 at 11:18am Eastern Standard Time (2 days ago)</br>Austin J. Medina</br>"Add color and movable player object to RandomLevel"</br>ss</br>19 November 2017 at 10:38am Eastern Standard Time (2 days ago)</br>sebastian soffici</br>"Changed loading main menu to index in pause menu function"</br>ss</br>17 November 2017 at 4:04pm Eastern Standard Time (4 days ago)</br>sebastian soffici</br>"Fixed menu bug, added calibrate functionality to pause menu (maybe? probably? check it out jeremy)"</br>AM</br>17 November 2017 at 4:00pm Eastern Standard Time (4 days ago)</br>Austin J. Medina</br>"Add player to level generator"</br>ss</br>17 November 2017 at 3:57pm Eastern Standard Time (4 days ago)</br>sebastian soffici</br>"Main menu option working pause menu"</br>ss</br>17 November 2017 at 3:35pm Eastern Standard Time (4 days ago)</br>sebastian soffici</br>"Starting pause menu implementation, resume button working"</br>AM</br>17 November 2017 at 3:27pm Eastern Standard Time (4 days ago)</br>Austin J. Medina</br>"Made wall prefab for faster level building"</br>JD</br>17 November 2017 at 3:27pm Eastern Standard Time (4 days ago)</br>Jeremy Dean</br>"added player to generated levels"</br>AM</br>17 November 2017 at 3:06pm Eastern Standard Time (4 days ago)</br>Austin J. Medina</br>"Add collision to generated walls and floor"</br>AM</br>17 November 2017 at 2:40pm Eastern Standard Time (4 days ago)</br>Austin J. Medina</br>"Fix player velocity timeFrozen bug"</br>JD</br>17 November 2017 at 2:28pm Eastern Standard Time (4 days ago)</br>Jeremy Dean</br>"fixed guard bug"</br>JD</br>16 November 2017 at 7:56pm Eastern Standard Time (5 days ago)</br>Jeremy Dean</br>"fixed random pillars in maze"</br>JD</br>16 November 2017 at 1:03pm Eastern Standard Time (5 days ago)</br>Jeremy Dean</br>"added more rooms with sebastian"</br>JD</br>16 November 2017 at 1:01pm Eastern Standard Time (5 days ago)</br>Jeremy Dean</br>"updated room gen with sebastian "</br>ss</br>16 November 2017 at 12:54pm Eastern Standard Time (5 days ago)</br>sebastian soffici</br>"Random room generator with jeremy"</br>JD</br>16 November 2017 at 12:32pm Eastern Standard Time (5 days ago)</br>Jeremy Dean</br>"corners fixed with sebastian "</br>JD</br>16 November 2017 at 12:19pm Eastern Standard Time (5 days ago)</br>Jeremy Dean</br>"open spaces w/ sebastian"</br>JD</br>16 November 2017 at 12:13pm Eastern Standard Time (5 days ago)</br>Jeremy Dean</br>"walls with sebastian"</br>JD</br>16 November 2017 at 12:08pm Eastern Standard Time (5 days ago)</br>Jeremy Dean</br>"updated floor with sebastian"</br>ss</br>16 November 2017 at 12:01pm Eastern Standard Time (5 days ago)</br>sebastian soffici</br>"Random level generator w/Jeremy "</br>JD</br>16 November 2017 at 11:50am Eastern Standard Time (5 days ago)</br>Jeremy Dean</br>"No Comments"</br>JD</br>16 November 2017 at 11:49am Eastern Standard Time (5 days ago)</br>Jeremy Dean</br>"trying to fix maze "</br>JD</br>15 November 2017 at 3:11pm Eastern Standard Time (6 days ago)</br>Jeremy Dean</br>"Made new scene for seed generation. Added first iteration of random maze"</br>JD</br>08 November 2017 at 4:55pm Eastern Standard Time (13 days ago)</br>Jeremy Dean</br>"Fixed "Need Key" label popup"</br>JD</br>08 November 2017 at 2:30pm Eastern Standard Time (13 days ago)</br>Jeremy Dean</br>"Added sprint and speed multipliers in inspector panel"</br>JD</br>07 November 2017 at 3:20pm Eastern Standard Time (14 days ago)</br>Jeremy Dean</br>"Added message if you get to door and don't have key"</br>JD</br>07 November 2017 at 2:15pm Eastern Standard Time (14 days ago)</br>Jeremy Dean</br>"Fixed wall height"</br>AM</br>07 November 2017 at 1:01pm Eastern Standard Time (14 days ago)</br>Austin J. Medina</br>"Add door to level one, opens if player has the key pickup"</br>BB</br>05 November 2017 at 11:56pm Eastern Standard Time (15 days ago)</br>B B</br>"hi its crazy last minute but guard patrols now work"</br>AM</br>05 November 2017 at 10:47pm Eastern Standard Time (15 days ago)</br>Austin J. Medina</br>"Fix scene loading"</br>JD</br>05 November 2017 at 10:41pm Eastern Standard Time (15 days ago)</br>Jeremy Dean</br>"reverted to older version so gyroscope works for presentation"</br>AM</br>05 November 2017 at 10:39pm Eastern Standard Time (15 days ago)</br>Austin J. Medina</br>"Change scene loading method"</br>JD</br>05 November 2017 at 10:31pm Eastern Standard Time (16 days ago)</br>Jeremy Dean</br>"updated for presentation (second guard rotation)"</br>AM</br>05 November 2017 at 10:28pm Eastern Standard Time (16 days ago)</br>Austin J. Medina</br>"Build for 1st presentation"</br>JD</br>05 November 2017 at 10:08pm Eastern Standard Time (16 days ago)</br>Jeremy Dean</br>"built lighting for level two"</br>JD</br>05 November 2017 at 4:16pm Eastern Standard Time (16 days ago)</br>Jeremy Dean</br>"Fixed capsule guard not working in level one "</br>ss</br>05 November 2017 at 12:53pm Eastern Standard Time (16 days ago)</br>sebastian soffici</br>"More pickup"</br>ss</br>05 November 2017 at 12:44pm Eastern Standard Time (16 days ago)</br>sebastian soffici</br>"Implement dymanic pickups"</br>BB</br>05 November 2017 at 7:14am Eastern Standard Time (16 days ago)</br>B B</br>"There was a weird thing where if you moved at a wall at a non 90 degree angle, you would just stop as opposed to retianing the momentum that would sitll move you horizontally. i fixed this by giving the player a physics material with 0 friction. in level 2, i started messing around with the guard a bit, made a new field of view script so i could mess with rigid body stuff, and i made the most rudimentary version of pathing possible. with a little more messing around, i should be able to have it do a patrol around a series of walls and loop. i learned how navmesh stuff works, and we can totally use it to generate paths for guards to walk on dynamically duing runtime, or after generating a level procederally, it just looks at the mesh currently in place when you tell it to bake. they dont have that stuff in the standard libraries tho, you have to download it form the official unity git, which is what all those new scripts are."</br>JD</br>03 November 2017 at 9:33am Eastern Daylight Time (18 days ago)</br>Jeremy Dean</br>"Disable auto generation of lighting which caused scenes to get darker when they were loaded or reloaded. ***If any new scenes or light sources are added go into window>lighting>settings and click generate at the bottom.***"</br>JD</br>03 November 2017 at 9:23am Eastern Daylight Time (18 days ago)</br>Jeremy Dean</br>"Forgot to comment on last push. It added time freezing for guards"</br>JD</br>02 November 2017 at 10:20pm Eastern Daylight Time (19 days ago)</br>Jeremy Dean</br>"No Comments"</br>JD</br>02 November 2017 at 7:59pm Eastern Daylight Time (19 days ago)</br>Jeremy Dean</br>"Added guard rotation options"</br>AM</br>02 November 2017 at 4:07pm Eastern Daylight Time (19 days ago)</br>Austin J. Medina</br>"Create capsule guard with vision detection (resets level upon detection)"</br>AM</br>02 November 2017 at 3:07pm Eastern Daylight Time (19 days ago)</br>Austin J. Medina</br>"FOV script changes"</br>JD</br>02 November 2017 at 2:35pm Eastern Daylight Time (19 days ago)</br>Jeremy Dean</br>"No Comments"</br>ID</br>02 November 2017 at 2:26pm Eastern Daylight Time (19 days ago)</br>Iman Dhillon</br>"No Comments"</br>JD</br>02 November 2017 at 1:29pm Eastern Daylight Time (19 days ago)</br>Jeremy Dean</br>"Changed main menu"</br>JD</br>02 November 2017 at 12:53pm Eastern Daylight Time (19 days ago)</br>Jeremy Dean</br>"No Comments"</br>ss</br>02 November 2017 at 12:50pm Eastern Daylight Time (19 days ago)</br>sebastian soffici</br>"No Comments"</br>ss</br>02 November 2017 at 12:49pm Eastern Daylight Time (19 days ago)</br>sebastian soffici</br>"added png "</br>ss</br>02 November 2017 at 12:42pm Eastern Daylight Time (19 days ago)</br>sebastian soffici</br>"No Comments"</br>JD</br>02 November 2017 at 12:32pm Eastern Daylight Time (19 days ago)</br>Jeremy Dean</br>"No Comments"</br>ss</br>02 November 2017 at 12:32pm Eastern Daylight Time (19 days ago)</br>sebastian soffici</br>"No Comments"</br>AM</br>02 November 2017 at 12:30pm Eastern Daylight Time (19 days ago)</br>Austin J. Medina</br>"FOV script and Images folder"</br>AM</br>02 November 2017 at 11:04am Eastern Daylight Time (19 days ago)</br>Austin J. Medina</br>"Change camera angle"</br>JD</br>02 November 2017 at 10:57am Eastern Daylight Time (19 days ago)</br>Jeremy Dean</br>"No Comments"</br>JD</br>01 November 2017 at 10:48am Eastern Daylight Time (20 days ago)</br>Jeremy Dean</br>"Added Title/Label to main menu"</br>JD</br>01 November 2017 at 10:36am Eastern Daylight Time (20 days ago)</br>Jeremy Dean</br>"Added main menu, debug controls (WASD)"</br>JD</br>01 November 2017 at 9:28am Eastern Daylight Time (20 days ago)</br>Jeremy Dean</br>"Added sprint and calibrate buttons"</br>JD</br>01 November 2017 at 8:52am Eastern Daylight Time (20 days ago)</br>Jeremy Dean</br>"No Comments"</br>JD</br>31 October 2017 at 11:02pm Eastern Daylight Time (21 days ago)</br>Jeremy Dean</br>"No Comments"</br>JD</br>31 October 2017 at 8:43pm Eastern Daylight Time (21 days ago)</br>Jeremy Dean</br>"No Comments"</br>JD</br>31 October 2017 at 2:10pm Eastern Daylight Time (21 days ago)</br>Jeremy Dean</br>"Added in accelerometer zeroing. Currently zeroing is "flipped". Trying to fix."</br>AM</br>31 October 2017 at 1:43pm Eastern Daylight Time (21 days ago)</br>Austin J. Medina</br>"Attempt AI cone of vision (JavaScript)"</br>AM</br>31 October 2017 at 1:13pm Eastern Daylight Time (21 days ago)</br>Austin J. Medina</br>"Modify layout of level one"</br>JD</br>31 October 2017 at 12:33pm Eastern Daylight Time (21 days ago)</br>Jeremy Dean</br>"No Comments"</br>JD</br>31 October 2017 at 12:33pm Eastern Daylight Time (21 days ago)</br>Jeremy Dean</br>"No Comments"</br>JD</br>31 October 2017 at 12:32pm Eastern Daylight Time (21 days ago)</br>Jeremy Dean</br>"No Comments"</br>JD</br>31 October 2017 at 12:30pm Eastern Daylight Time (21 days ago)</br>Jeremy Dean</br>"No Comments"</br>JD</br>31 October 2017 at 12:28pm Eastern Daylight Time (21 days ago)</br>Jeremy Dean</br>"No Comments"</br>JD</br>31 October 2017 at 12:25pm Eastern Daylight Time (21 days ago)</br>Jeremy Dean</br>"No Comments"</br>JD</br>31 October 2017 at 12:24pm Eastern Daylight Time (21 days ago)</br>Jeremy Dean</br>"No Comments"</br>JD</br>31 October 2017 at 11:58am Eastern Daylight Time (21 days ago)</br>Jeremy Dean</br>"No Comments"</br>JD</br>31 October 2017 at 11:24am Eastern Daylight Time (21 days ago)</br>Jeremy Dean</br>"No Comments"</br>AM</br>31 October 2017 at 11:21am Eastern Daylight Time (21 days ago)</br>Austin J. Medina</br>"Testing #1"</br>JD</br>31 October 2017 at 11:16am Eastern Daylight Time (21 days ago)</br>Jeremy Dean</br>"No Comments"</br>AM</br>31 October 2017 at 11:10am Eastern Daylight Time (21 days ago)</br>Austin J. Medina</br>"Initial Commit."

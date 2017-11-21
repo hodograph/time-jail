@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "time-jail", "Assembly-CSharp.csproj", "{20C8B168-53AF-CED0-5CDD-986D5B88101D}"
 EndProject
-Project("{D1BAAABE-45FD-6CD8-AE87-6B5CF402E296}") = "time-jail", "Assembly-UnityScript.unityproj", "{477277D8-D226-531A-B5F7-FAA2821AF066}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "time-jail", "Assembly-CSharp-Editor.csproj", "{13E15687-C408-ED8E-630C-7332F6B8F8B0}"
 EndProject
 Global
@@ -17,10 +15,6 @@ Global
 		{20C8B168-53AF-CED0-5CDD-986D5B88101D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20C8B168-53AF-CED0-5CDD-986D5B88101D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20C8B168-53AF-CED0-5CDD-986D5B88101D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{477277D8-D226-531A-B5F7-FAA2821AF066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{477277D8-D226-531A-B5F7-FAA2821AF066}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{477277D8-D226-531A-B5F7-FAA2821AF066}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{477277D8-D226-531A-B5F7-FAA2821AF066}.Release|Any CPU.Build.0 = Release|Any CPU
 		{13E15687-C408-ED8E-630C-7332F6B8F8B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{13E15687-C408-ED8E-630C-7332F6B8F8B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13E15687-C408-ED8E-630C-7332F6B8F8B0}.Release|Any CPU.ActiveCfg = Release|Any CPU

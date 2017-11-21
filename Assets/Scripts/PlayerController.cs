@@ -5,15 +5,20 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
 	public float speedMultiplier;
-	Matrix4x4 baseMatrix = Matrix4x4.identity;
+	private float speedMultiplierPrivate;
+	public float sprintMultiplier;
+	Matrix4x4 baseMatrix;
 	public static bool timeFrozen = false;
 	[HideInInspector]
 	public Rigidbody rb;
+	public static bool hasKey;
+
+	private Vector3 LKposition = new Vector3 (0.0f, 0.0f, 0.0f);
 
 
 
 	// Used to calibrate the Input.acceleration
-	void CalibrateAccelerometer()
+	public void CalibrateAccelerometer()
 	{
 		/*Currently only works if calibrate is clicked in quadrant 2
 		 * if clicked in 2, zeros in 2
@@ -39,14 +44,12 @@ public class PlayerController : MonoBehaviour {
 		Accel.z *= -1;
 		Quaternion rotate = Quaternion.FromToRotation(new Vector3(0.0f, 0.0f, -1.0f), Accel);
 		Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, rotate, new Vector3(1.0f, 1.0f, 1.0f));
-		this.baseMatrix = matrix.inverse;
+		baseMatrix = matrix.inverse;
 	}
 
 	// Use this for initialization
 	void Start () {
-
-		speedMultiplier = 20f;
-
+		speedMultiplierPrivate = speedMultiplier;
 		rb = GetComponent<Rigidbody>();
 		CalibrateAccelerometer ();
 	}
@@ -57,6 +60,7 @@ public class PlayerController : MonoBehaviour {
 		Vector3 fixedAcceleration = this.baseMatrix.MultiplyVector (Input.acceleration);
 		//Debug.Log ("Fixed: " + fixedAcceleration);
 		//Debug.Log ("Original: " + Input.acceleration);
+		//fixedAcceleration.z *= -1;
 		rb.velocity = fixedAcceleration * speedMultiplier;
 
 		float moveVert = Input.GetAxis ("Vertical");
@@ -68,10 +72,12 @@ public class PlayerController : MonoBehaviour {
 			rb.velocity = Move * speedMultiplier;
 			//rb.AddForce (Move * speedMultiplier,ForceMode.VelocityChange);
 		}
-		if (fixedAcceleration == Vector3.zero && Move == Vector3.zero)
+		if (LKposition == gameObject.transform.position)
 			timeFrozen = true;
 		else
 			timeFrozen = false;
+		
+		LKposition = gameObject.transform.position;
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -79,24 +85,18 @@ public class PlayerController : MonoBehaviour {
 		if (other.gameObject.tag == "PickUp")
 		{
 			other.gameObject.SetActive(false);
+			hasKey = true;
+			//Debug.Log("Has Key");
 		}
 	}
 	void OnGUI(){
-		GUIStyle calibrateStyle = new GUIStyle ("button");
-		calibrateStyle.fontSize = 15;
-		//Calibrate button
-		if (GUI.Button(new Rect(Screen.width/10*9, Screen.height/20*18, Screen.width/10, Screen.width/20), "Calibrate", calibrateStyle)) {
-			CalibrateAccelerometer ();
-			Debug.Log ("Calibrating");
-		}
-
 		GUIStyle sprintStyle = new GUIStyle ("button");
 		sprintStyle.fontSize = 15;
 		//Sprint button (repeat does on hold)
 		if(GUI.RepeatButton(new Rect(Screen.width/10*9, Screen.height/20*16, Screen.width/10, Screen.width/20), "Sprint", sprintStyle)){
-			speedMultiplier = 80f;
+			speedMultiplier = sprintMultiplier;
 		}else{
-			speedMultiplier = 20f;
+			speedMultiplier = speedMultiplierPrivate;
 		}
 	}
 }

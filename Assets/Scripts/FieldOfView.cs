@@ -9,9 +9,9 @@ public class FieldOfView : MonoBehaviour {
 	public float viewRadius;
 	[Range(0, 360)]
 	public float viewAngle;
-	[Range(0,360)]
+	[Range(1,358)]
 	public float startAngle;
-	[Range(0,360)]
+	[Range(1,358)]
 	public float endAngle;
 	public float speed;
 	private bool going = true;
@@ -45,15 +45,13 @@ public class FieldOfView : MonoBehaviour {
 
 	void Rotate(){
 		if (!PlayerController.timeFrozen) {
-			Quaternion start = Quaternion.Euler (0.0f, startAngle, 0.0f);
-			Quaternion end = Quaternion.Euler (0.0f, endAngle, 0.0f);
 			if (going) {
 				transform.Rotate (0, speed * Time.deltaTime, 0);
-				if (transform.rotation == end)
+				if (transform.rotation.eulerAngles.y >= endAngle && transform.rotation.eulerAngles.y <= endAngle+1)
 					going = false;
 			} else {
 				transform.Rotate (0, -speed * Time.deltaTime, 0);
-				if (transform.rotation == start)
+				if (transform.rotation.eulerAngles.y <= startAngle && transform.rotation.eulerAngles.y >= startAngle-1)
 					going = true;
 			}
 		}

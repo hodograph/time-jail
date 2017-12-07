@@ -54,8 +54,8 @@ public class MazeGenerator : MonoBehaviour {
 		GameObject floor = GameObject.CreatePrimitive (PrimitiveType.Plane);
 		floor.transform.parent = transform;
 		MeshCollider floorCollider = (MeshCollider)floor.gameObject.AddComponent(typeof(MeshCollider));
-		floor.transform.localScale = new Vector3 (width/10, 1, height/10);
-		floor.transform.position = new Vector3 (width / 2, -0.5f, height / 2);
+		floor.transform.localScale = new Vector3 ((((float)width-1.0f)/10.0f), 1, ((float)height-1.0f)/10.0f);
+		floor.transform.position = new Vector3 (((float)width-1.0f)/ 2.0f, -0.5f, ((float)height-1.0f) / 2.0f);
 		floor.GetComponent<Renderer>().material.color = Color.gray;
 		GenerateMaze();
 		//GenerateGuards();
@@ -75,8 +75,7 @@ public class MazeGenerator : MonoBehaviour {
 
 	void GenerateMaze()
 	{
-		width = width + 1;
-		height = height + 1;
+
 		Maze = new int[width, height];
 		for (int x = 0; x < width; x++)
 		{
@@ -96,6 +95,7 @@ public class MazeGenerator : MonoBehaviour {
 		Maze [1, 0] = 2;
 		Maze [1, height - 1] = 2;
 		Maze [width - 1, 1] = 3;
+
 		for (int i = 0; i <= Maze.GetUpperBound(0); i++)
 		{
 			for (int j = 0; j <= Maze.GetUpperBound(1); j++)

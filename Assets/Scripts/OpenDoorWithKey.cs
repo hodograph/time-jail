@@ -6,6 +6,7 @@ using UnityEngine;
 public class OpenDoorWithKey : MonoBehaviour {
  
     public GameObject Door;
+	public int level = 0;
 	private PlayerController playerController;
 	
 	private bool isLocked;
@@ -13,6 +14,8 @@ public class OpenDoorWithKey : MonoBehaviour {
 	private bool isOpen;
 	private bool showLockedBool;
 	private bool showLockedGUI;
+	private bool showLockedLevelGUI;
+
  
  
 	private float currentTime = 0.0f;
@@ -27,6 +30,8 @@ public class OpenDoorWithKey : MonoBehaviour {
 		isOpen = false;
 		showLockedBool = false;
 		showLockedGUI = false;
+		showLockedLevelGUI = false;
+
     }
  
     void OnTriggerEnter(Collider other)
@@ -52,10 +57,21 @@ public class OpenDoorWithKey : MonoBehaviour {
 	
 	void Update()
 	{
-		if (showLockedBool)
-			showLockedGUI = true;
-		else
+		if (showLockedBool) {
+			if (level > PlayerController.keyLevel) {
+				showLockedLevelGUI = true;
+				showLockedGUI = false;
+
+			} else {
+				showLockedGUI = true;
+				showLockedLevelGUI = false;
+			}
+		}
+
+		else {
 			showLockedGUI = false;
+			showLockedLevelGUI = false;
+			}
 
 		if(executedTime != 0.0f && !PlayerController.hasKey){
 			showLockedBool = true;
@@ -68,10 +84,12 @@ public class OpenDoorWithKey : MonoBehaviour {
 		currentTime = Time.time;
 		if(playerNearby && !isOpen)
 		{
-			if(PlayerController.hasKey)
-			{
-				isLocked = false;
+			if (PlayerController.hasKey) {
+				if (PlayerController.keyLevel >= level) {
+					isLocked = false;
+				}
 			}
+
 			
 			if (!isLocked) {
 				isOpen = true;
@@ -86,7 +104,10 @@ public class OpenDoorWithKey : MonoBehaviour {
 		GUIStyle keyNeeded = new GUIStyle("Label");
 		keyNeeded.fontSize = 40;
 		keyNeeded.alignment = TextAnchor.UpperCenter;
-		if(showLockedGUI)
+		if (showLockedLevelGUI) {
+			GUI.Label (new Rect (Screen.width / 5, Screen.height / 10, Screen.width / 5 * 4, Screen.height / 5), string.Concat("Need Level ", level.ToString(), " Key To Open Door"), keyNeeded);
+		}
+		else if(showLockedGUI)
 			GUI.Label (new Rect (Screen.width/5, Screen.height/10, Screen.width/5*4, Screen.height/5), "Need Key To Open Door", keyNeeded);
 
 	}

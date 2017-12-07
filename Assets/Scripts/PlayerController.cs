@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -11,11 +12,22 @@ public class PlayerController : MonoBehaviour {
 	public static bool timeFrozen = false;
 	[HideInInspector]
 	public Rigidbody rb;
-	public static bool hasKey;
+	public static bool hasKey = false;
+	public static int keyLevel = 0;
 
 	private Vector3 LKposition = new Vector3 (0.0f, 0.0f, 0.0f);
 
+	void OnEnable(){
+		SceneManager.sceneLoaded += OnSceneLoaded;
+	}
 
+	void OnDisable(){
+		SceneManager.sceneLoaded -= OnSceneLoaded;
+	}
+		
+	void OnSceneLoaded(Scene scene, LoadSceneMode mode){
+		hasKey = false;
+	}
 
 	// Used to calibrate the Input.acceleration
 	public void CalibrateAccelerometer()
@@ -86,6 +98,11 @@ public class PlayerController : MonoBehaviour {
 		{
 			other.gameObject.SetActive(false);
 			hasKey = true;
+			if (other.GetComponent<KeyKey> () != null) {
+				KeyKey temp = other.GetComponent(typeof(KeyKey)) as KeyKey;
+				keyLevel = temp.Key;
+			}
+
 			//Debug.Log("Has Key");
 		}
 	}

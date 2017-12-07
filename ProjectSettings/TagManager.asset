@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PickUp
   - ShowOnPause
+  - Guard
   layers:
   - Default
   - TransparentFX

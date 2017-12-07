@@ -9,15 +9,20 @@ public class FieldOfView : MonoBehaviour {
 	public float viewRadius;
 	[Range(0, 360)]
 	public float viewAngle;
-	[Range(1,358)]
+	[Range(0,358)]
 	public float startAngle;
-	[Range(1,358)]
+	[Range(0,358)]
 	public float endAngle;
 	public float speed;
+	public bool changeDir = true;
+	public bool isCamera = false;
 	private bool going = true;
 	
 	public LayerMask targetMask;
 	public LayerMask obstacleMask;
+	public int offset = 1;
+	
+	public bool noRotate;
 	
 	[HideInInspector]
 	public List<Transform> visibleTargets = new List<Transform>();
@@ -26,7 +31,7 @@ public class FieldOfView : MonoBehaviour {
 	
 	public MeshFilter viewMeshFilter;
 	Mesh viewMesh;
-	
+
 	
 	void Start()
 	{
@@ -35,6 +40,21 @@ public class FieldOfView : MonoBehaviour {
 		viewMeshFilter.mesh = viewMesh;
 		StartCoroutine("FindTargetsWithDelay", 0.2f);
 		transform.rotation = Quaternion.Euler (0.0f, startAngle, 0.0f);
+
+		if (!isCamera) {
+			GameObject lightGameObject = new GameObject ("Flash Light");
+			Light light = lightGameObject.gameObject.AddComponent<Light> ();
+			lightGameObject.transform.parent = this.transform;
+			light.type = LightType.Spot;
+			light.shadows = LightShadows.Soft;
+			light.transform.Rotate (0, startAngle - light.transform.rotation.eulerAngles.y, 0);
+			light.range = viewRadius;
+			light.spotAngle = viewAngle;
+			light.transform.position = this.transform.position;
+			light.intensity = viewRadius / 15 * 1000;
+			light.color = Color.yellow;
+			light.renderMode = LightRenderMode.ForcePixel;
+		}
 	}
 	
 	void Update()
@@ -44,14 +64,19 @@ public class FieldOfView : MonoBehaviour {
 	}
 
 	void Rotate(){
-		if (!PlayerController.timeFrozen) {
+		if (!PlayerController.timeFrozen && !noRotate) {
 			if (going) {
-				transform.Rotate (0, speed * Time.deltaTime, 0);
-				if (transform.rotation.eulerAngles.y >= endAngle && transform.rotation.eulerAngles.y <= endAngle+1)
+				if(changeDir)
+					transform.Rotate (0, speed * Time.deltaTime, 0);
+				else
+					transform.Rotate (0, -speed * Time.deltaTime, 0);
+				if (transform.rotation.eulerAngles.y >= endAngle && transform.rotation.eulerAngles.y <= endAngle+offset)
 					going = false;
 			} else {
-				transform.Rotate (0, -speed * Time.deltaTime, 0);
-				if (transform.rotation.eulerAngles.y <= startAngle && transform.rotation.eulerAngles.y >= startAngle-1)
+				if(changeDir)
+					transform.Rotate (0, -speed * Time.deltaTime, 0);
+				else
+					transform.Rotate (0, speed * Time.deltaTime, 0);				if (transform.rotation.eulerAngles.y <= startAngle && transform.rotation.eulerAngles.y >= startAngle-offset)
 					going = true;
 			}
 		}
@@ -86,7 +111,8 @@ public class FieldOfView : MonoBehaviour {
 				if (!Physics.Raycast(transform.position, dirToTarget, distToTarget, obstacleMask))
 				{
 					visibleTargets.Add(target);
-					SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+					DeathScreen DS =  GameObject.FindObjectOfType(typeof(DeathScreen)) as DeathScreen;
+					DS.Pause ();
 				}
 			}
 		}

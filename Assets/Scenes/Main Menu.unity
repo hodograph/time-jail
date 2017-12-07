@@ -271,7 +271,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: {fileID: 2800000, guid: c80e9c0c224e04f2bb6e51be2ea2b12d, type: 3}
   start: {fileID: 2800000, guid: 6364de33a8dbd40248c5e8d52579c3a9, type: 3}
-  option: {fileID: 2800000, guid: a575c3b779eac47fda24ceb03303e408, type: 3}
+  option: {fileID: 2800000, guid: 01b01fbce65bb4d01bd348bebbf52ef3, type: 3}
+  Level1png: {fileID: 2800000, guid: 28e9dd0928d41403096bfea86c0ae1eb, type: 3}
+  Level2png: {fileID: 2800000, guid: 2f7f81a69470b4deb850b9398a87418f, type: 3}
+  Level3png: {fileID: 2800000, guid: fa99f75b6dac142f7a3c26b722464e60, type: 3}
+  Level4png: {fileID: 2800000, guid: 91a9658c409764b6d93b1e8188a3cdb3, type: 3}
+  Level5png: {fileID: 2800000, guid: 64900b9977b25403690d1001ec871df1, type: 3}
+  Level6png: {fileID: 2800000, guid: a37638de791eb4fcd97eb0459ec54b43, type: 3}
 --- !u!1 &1689392908
 GameObject:
   m_ObjectHideFlags: 0

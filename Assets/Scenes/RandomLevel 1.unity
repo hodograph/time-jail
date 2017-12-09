@@ -231,6 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 562800207}
+  player: {fileID: 1646936680}
 --- !u!1 &268452061
 GameObject:
   m_ObjectHideFlags: 0

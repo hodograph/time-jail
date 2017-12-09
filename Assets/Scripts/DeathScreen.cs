@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DeathScreen : MonoBehaviour {
-	public Transform canvas;	
+	public Transform canvas;
+	public GameObject player;
 
 	//Pause/resume
 	public void Pause(){ 
@@ -27,7 +28,13 @@ public class DeathScreen : MonoBehaviour {
 	//Calibrate
 	public void Restart()
 	{
-		SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
+		if (SceneManager.GetActiveScene ().buildIndex == 5) {
+			player.transform.position = new Vector3 (1, -.37f, 1);
+			canvas.gameObject.SetActive (false);
+
+		} else {
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+		}
 		Time.timeScale = 1;
 
 	}

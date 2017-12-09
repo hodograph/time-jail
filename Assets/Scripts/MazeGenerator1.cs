@@ -798,6 +798,7 @@ public class MazeGenerator1 : MonoBehaviour {
 						GameObject ptype4 = new GameObject ();
 						ptype4.AddComponent (typeof(OpenDoorWithKey));
 						ptype4.AddComponent (typeof(BoxCollider));
+						ptype4.layer = 9;
 						BoxCollider bc = ptype4.GetComponent (typeof(BoxCollider)) as BoxCollider;
 						bc.isTrigger = true;
 						bc.size = new Vector3 (1, 2, 0.25f);
@@ -807,6 +808,9 @@ public class MazeGenerator1 : MonoBehaviour {
 						int lvvvv = SpaceMaze [i, j];
 						odwk.level = (lvvvv+1) * -1;
 
+						ptype2.layer = 9;
+						ptype1.layer = 9;
+						ptype4.layer = 9;
 
 						ptype1.transform.parent = ptype4.transform;
 						ptype1.GetComponent<Renderer>().material.color = Color.white;
@@ -830,6 +834,7 @@ public class MazeGenerator1 : MonoBehaviour {
 						GameObject ptype4 = new GameObject ();
 						ptype4.AddComponent (typeof(OpenDoorWithKey));
 						ptype4.AddComponent (typeof(BoxCollider));
+						ptype4.layer = 9;
 						BoxCollider bc = ptype4.GetComponent (typeof(BoxCollider)) as BoxCollider;
 						bc.isTrigger = true;
 						bc.size = new Vector3 (0.25f, 2, 1);
@@ -845,6 +850,11 @@ public class MazeGenerator1 : MonoBehaviour {
 						ptype4.transform.position = ptype.transform.position + new Vector3 (0, 0f, 0.75f);
 						ptype1.transform.position = ptype1.transform.position + new Vector3 (0f, 0f, 0.375f);
 						ptype4.transform.position = ptype4.transform.position + new Vector3 (0f, 0f, -0.375f);
+
+
+						ptype2.layer = 9;
+						ptype1.layer = 9;
+						ptype4.layer = 9;
 
 
 					}
@@ -997,20 +1007,24 @@ public class MazeGenerator1 : MonoBehaviour {
 		}
 
 		for (int i = startx; i < startx+roomwidth; i++) {
-			if (tMaze [i, starty+roomheight] != 3 && tMaze[i, starty+roomheight] != -1) {
-				Maze [i, starty+roomheight] = 0;
-			}
-			if (tMaze [i, starty - 1] != 3 && tMaze[i, starty - 1] != -1) {
-				Maze [i, starty - 1] = 0;
+			if (starty > 0 && starty + roomheight < height - 1) {
+				if (tMaze [i, starty + roomheight] != 3 && tMaze [i, starty + roomheight] != -1) {
+					Maze [i, starty + roomheight] = 0;
+				}
+				if (tMaze [i, starty - 1] != 3 && tMaze [i, starty - 1] != -1) {
+					Maze [i, starty - 1] = 0;
+				}
 			}
 		}
 
 		for (int i = starty; i < starty+roomheight; i++) {
-			if (tMaze [startx-1, i] != 2 && tMaze[startx-1, i] != -1) {
-				Maze [startx-1, i] = 0;
-			}
-			if (tMaze [startx+roomwidth, i] != 2 && tMaze[startx+roomwidth, i] != -1) {
-				Maze [startx+roomwidth, i] = 0;
+			if (startx > 0 && startx + roomwidth < width - 1) {
+				if (tMaze [startx - 1, i] != 2 && tMaze [startx - 1, i] != -1) {
+					Maze [startx - 1, i] = 0;
+				}
+				if (tMaze [startx + roomwidth, i] != 2 && tMaze [startx + roomwidth, i] != -1) {
+					Maze [startx + roomwidth, i] = 0;
+				}
 			}
 		}
 

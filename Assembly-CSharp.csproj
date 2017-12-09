@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\KeyKey.cs" />
+     <Compile Include="Assets\Scripts\Accel.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\DeathScreen.cs" />
      <Compile Include="Assets\Scripts\FieldOfView.cs" />
@@ -65,7 +66,6 @@
      <Compile Include="Assets\Scripts\MazeGenerator.cs" />
      <Compile Include="Assets\Scripts\MazeGenerator1.cs" />
      <Compile Include="Assets\Scripts\mazegeneratorexp.cs" />
-     <Compile Include="Assets\Scripts\Movement.cs" />
      <Compile Include="Assets\Scripts\MoveTo.cs" />
      <Compile Include="Assets\Scripts\NavMeshLink.cs" />
      <Compile Include="Assets\Scripts\NavMeshModifier.cs" />
